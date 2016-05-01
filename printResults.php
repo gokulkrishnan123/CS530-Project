@@ -1,7 +1,4 @@
 <html>
-This is where team data will print
-
-
 <?php
 require 'NBAdatabase.php';
 $teamName = $_GET['team'];
@@ -61,7 +58,7 @@ echo "</tr>\n";
 }
 else
 {
-echo "inside off court";
+//echo "inside off court";
 $stmt = $mysqli->prepare("SELECT * FROM $table AS t, nba_team AS n WHERE t.teamNo=n.teamNo AND n.mascot = '".$teamName."' AND t.year IN $years");
 $test = "SELECT * FROM $table AS t, nba_team AS n WHERE t.teamNo=n.teamNo AND n.mascot = '".$teamName."' AND t.year IN $years";
 if(!$stmt){

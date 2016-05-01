@@ -1,20 +1,21 @@
 <link rel="stylesheet" type="text/css" href="style2.css">
 <a href="teamData.html">View Raw Data</a>
+
 <?php
 
 require 'NBAdatabase.php';
 
 $demographic = $_GET['dem'];
 
-$on_court_statistic = $_GET['stat'];
+$off_court_statistic = $_GET['stat'];
 
-$level = $_GET['demlevel'];
+$level = $_GET['dem1level'];
 
 $team = $_GET['team'];
-$title= $on_court_statistic . ' vs ' . $demographic;
-$stmt = $mysqli->prepare("SELECT $on_court_statistic, $demographic, on_court_stats.year FROM on_court_stats, nba_team, $level WHERE nba_team.mascot = '".$team."' AND nba_team.teamNo = on_court_stats.teamNo AND nba_team.cityNo = $level.cityNo AND on_court_stats.year = $level.year ORDER BY year ASC");
 
-$test = "SELECT $on_court_statistic, $demographic, on_court_stats.year FROM on_court_stats, nba_team, $level WHERE nba_team.mascot = '".$team."' AND nba_team.teamNo = on_court_stats.teamNo AND nba_team.cityNo = $level.cityNo ORDER BY year ASC";
+$title = $off_court_statistic . ' vs ' . $demographic;
+
+$stmt = $mysqli->prepare("SELECT $off_court_statistic, $demographic, off_court_stats.year FROM off_court_stats, nba_team, $level WHERE nba_team.mascot = '".$team."' AND nba_team.teamNo = off_court_stats.teamNo AND nba_team.cityNo = $level.cityNo AND off_court_stats.year = $level.year ORDER BY year ASC");
 
 
 if(!$stmt){
@@ -26,20 +27,20 @@ $stmt->execute();
 
 $result = $stmt->get_result();
 
-$on_court_vec = '[';
+$off_court_vec = '[';
 $demographic_vec = '[';
 
 while($row=$result->fetch_assoc())
 {
-	//$on_court_vec = $on_court_vec . '{' . 'x: ' . $row["$demographic"] . ', ' . 'y: ' . $row["$on_court_statistic"] . ', name: ' .'"'. $	      //row["year"].'"'. '},';
+        //$on_court_vec = $on_court_vec . '{' . 'x: ' . $row["$demographic"] . ', ' . 'y: ' . $row["$on_court_statistic"] . ', name: ' .'"'. $        //row["year"].'"'. '},';
 
 
-	$on_court_vec = $on_court_vec . $row["$on_court_statistic"] . ',';
-	$demographic_vec = $demographic_vec . $row["$demographic"] . ',';
-	
+        $off_court_vec = $off_court_vec . $row["$off_court_statistic"] . ',';
+        $demographic_vec = $demographic_vec . $row["$demographic"] . ',';
+
 }
-	$on_court_vec = $on_court_vec . ']';
-	$demographic_vec = $demographic_vec . ']';
+        $off_court_vec = $off_court_vec . ']';
+        $demographic_vec = $demographic_vec . ']';
 
 
 //$on_court_vec=substr($on_court_vec, 0, $on_court_vec - 2);
@@ -52,15 +53,14 @@ $stmt->close();
 
 ?>
 
-
 <html>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script>
-var test = "<?php echo $on_court_vec?>";
+var test = "<?php echo $off_court_vec?>";
 var arraytest = test.split(',');
 console.log(arraytest);
 var demographic ="<?php echo $demographic ?>";
-var onCourt ="<?php echo $on_court_statistic ?>";
+var offCourt ="<?php echo $off_court_statistic ?>";
 var test2 = "<?php echo $demographic_vec?>";
 var title = "<?php echo $title?>";
 var arraytest2 = test2.split(',');
@@ -94,7 +94,7 @@ var layout = {
   },
 
   yaxis: {
-    title: onCourt,
+    title: offCourt,
     titlefont: {
       family: 'Courier New, monospace',
       size: 18,
@@ -105,6 +105,11 @@ var layout = {
 Plotly.newPlot('myDiv', data, layout);
 </script>
 </html>
+
+
+
+
+
 
 
 

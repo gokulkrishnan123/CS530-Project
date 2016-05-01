@@ -78,42 +78,36 @@ Select a City:
   <option value="Detroit">Detroit</option>
   <option value="Houston">Houston</option>
   <option value="Indianapolis">Indianapolis</option>
-  <option value="LosAngeles">Los Angeles</option>
+  <option value="Los Angeles">Los Angeles</option>
 
   <option value="Memphis">Memphis</option>
   <option value="Miami">Miami</option>
   <option value="Milwaukee">Milwaukee</option>
   <option value="Minneapolis">Minneapolis</option>
 
-  <option value="NewOrleans">New Orleans</option>
-  <option value="NewYork">New York</option>
-  <option value="OklahomaCity">Oklahoma City</option>
+  <option value="New Orleans">New Orleans</option>
+  <option value="New York">New York</option>
+  <option value="Oklahoma City">Oklahoma City</option>
   <option value="Orlando">Orlando</option>
 
   <option value="Philadelphia">Philadelphia</option>
   <option value="Phoenix">Phoenix</option>
   <option value="Portland">Portland</option>
   <option value="Sacramento">Sacramento</option>
-  <option value="SaltLakeCity">Salt Lake City</option>
-  <option value="SanAntonio">San Antonio</option>
-  <option value="SanFrancisco">San Francisco</option>
+  <option value="Utah">Salt Lake City</option>
+  <option value="San Antonio">San Antonio</option>
+  <option value="Golden State">San Francisco</option>
   <option value="Toronto">Toronto</option>
-  <option value="Washington DC">Washington DC</option>
+  <option value="Washington">Washington DC</option>
  <select>
 <br />
 Select a demographic:
 <br />
-Median Age <input type="checkbox" name="demographic[]" value="medianAge"  /><br />
-Sex Ratio <input type="checkbox" name="demographic[]" value="sexRatio"  /><br />
-Median Income <input type="checkbox" name="demographic[]" value="medianIncome"  /><br />
-Population <input type="checkbox" name="demographic[]" value="population"  /><br />
-Housing Units <input type="checkbox" name="demographic[]" value="housingUnits"  /><br />
 Are you interested in County level or Metropolitan level data?
 <select name="whichLevel">
   <option value="county">County Level</option>
   <option value="metropolitan">Metropolitan Level</option>
 </select>
-<input type="submit" value="Display" />
 
 <br />
 Select a year:
@@ -132,31 +126,4 @@ Select a year:
 <input type="submit" value="Display" />
 </form>
 <br />
-Compare a demographic to a team statistic:
-<br />
-<form action="joinGraph.php" method="GET">
-<br />
-Select a Demographic: 
-<br />
-<select name="dem">
-<option value="median_age">Median Age</option>
- <option value="sex_ratio">Sex Ratio</option>
- <option value="population">Population</option>
- <option value="housing_units">Housing Units</option>
-</select>
-<br />
-Select a team statistic:
-<br />
-<select name="stat">
- <option value="margin_victory">Margin of Victory</option>
- <option value="win_percent">Win Percentage</option>
- <option value="offensive_rating">Offensive Rating</option>
- <option value="defensive_rating">Defensive Rating</option>
- <option value="avg_ticket_pricing">Average Ticket Pricing</option>
- <option value="payroll">Payroll</option>
- <option value="stadium_capacity">Stadium Capacity</option>
- <option value="avg_attendance">Average Attendance</option>
-</select>
-<input type="submit" value="Display" />
-</form>
 </html>

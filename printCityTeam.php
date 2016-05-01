@@ -1,14 +1,12 @@
 <html>
 
-This is where data queried by city will be appear
-
 <?php
 
 require 'NBAdatabase.php';
 
 $city = $_GET['city'];
 
-echo $city;
+//echo $city;
 
 $medianAge = 0;
 $sexRatio = 0;
@@ -109,14 +107,14 @@ else
 {
 $stmt = $mysqli->prepare("SELECT * FROM $table AS t, nba_team AS n WHERE t.cityNo=n.cityNo AND n.teamName = '".$city."' AND t.year IN $years");
 $test = "SELECT * FROM $table AS t, nba_team AS n WHERE t.teamNo=n.teamNo AND n.teamName = '".$city."' AND t.year IN $years";
-echo $test;
+//echo $test;
 if(!$stmt){
 printf("Query Prep Failed: %s\n", $mysqli->error);
 exit;
 }
 $stmt->execute();
 $result = $stmt->get_result();
-echo "inside";
+//echo "inside";
 echo "<ul>\n";
 echo "<h1>Table: {$table}</h1>";
 echo "<table border='1'><tr>";
@@ -126,7 +124,7 @@ while($row = $result->fetch_assoc()){
         //echo "<li>\n";
         
         $yearVec = $yearVec . $row["year"] . ',';
-        $incomeVec = $incomeVec . $row["medianIncome"] . ',';
+        $incomeVec = $incomeVec . $row["mediumIncome"] . ',';
         $populationVec = $populationVec . $row["population"] . ',';
         $ageVec = $ageVec . $row["medianAge"] . ',';
         $sexRatioVec = $sexRatioVec . $row["maleFemaleRatio"] . ',';
@@ -158,13 +156,13 @@ $housingCostVec = $housingCostVec . ']';
 echo "</tr>\n";
 }
 
-echo $yearVec;
-echo $incomeVec;
-echo $populationVec;
-echo $ageVec;
-echo $sexRatioVec;
-echo $housingUnitsVec;
-echo $housingCostVec;
+//echo $yearVec;
+//echo $incomeVec;
+//echo $populationVec;
+//echo $ageVec;
+//echo $sexRatioVec;
+//echo $housingUnitsVec;
+//echo $housingCostVec;
 
 $stmt->close();
 

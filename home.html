@@ -1,5 +1,6 @@
 <html>
-<h1> Correlating NBA Team Information with Information about their City</h1>
+<h1> Correlating NBA Team Data with City Demographic Information</h1>
+<h4> Use this section to retreive the on court or off court stats for a given team </h4>
 <form action="teamGraph.php" method="GET">
 Select a team:
 <select name="team">
@@ -15,7 +16,7 @@ Select a team:
 
   <option value="Hawks">Hawks</option>
   <option value="Heat">Heat</option>
-  <option value="Hornets">Hornets</option>
+  <option value="Pelicans">Hornets</option>
   <option value="Jazz">Jazz</option>
 
   <option value="Kings">Kings</option>
@@ -51,6 +52,10 @@ Which stats are you interested in:
 </select>
 <input type="submit" value="Display" />
 </form>
+<hr>
+<h4> Use this section to retrieve demographic information for a given city at the county or metropolitan level </h4>
+<h4> County Level data is for the county the stadium is in </h4>
+
 Select a City:
 <form action="cityGraph.php" method="GET">
 <select name="city">
@@ -86,10 +91,8 @@ Select a City:
   <option value="Utah">Salt Lake City</option>
   <option value="San Antonio">San Antonio</option>
   <option value="Golden State">San Francisco</option>
-  <option value="Washington DC">Washington DC</option>
+  <option value="Washington">Washington DC</option>
  <select>
-<br />
-Select a demographic:
 <br />
 Are you interested in County level or Metropolitan level data?
 <select name="whichLevel">
@@ -99,11 +102,10 @@ Are you interested in County level or Metropolitan level data?
 <input type="submit" value="Display" />
 
 </form>
-<br />
-Compare a demographic to an on court team statistic:
-<br />
+<hr>
+<h4> Correlating Demographic Data with On Court Statistics </h4>
+
 <form action="joinGraph.php" method="GET">
-<br />
 Select a Demographic:
 <br />
 <select name="dem">
@@ -144,7 +146,7 @@ Select a team of interest:
 
   <option value="Hawks">Hawks</option>
   <option value="Heat">Heat</option>
-  <option value="Hornets">Hornets</option>
+  <option value="Pelicans">Hornets</option>
   <option value="Jazz">Jazz</option>
 
   <option value="Kings">Kings</option>
@@ -173,12 +175,9 @@ Select a team of interest:
 </select>
 <input type="submit" value="Display" />
 </form>
-
-<br />
-Compare a demographic to an off court team statistic:
-<br />
+<hr>
+<h4> Correlating Demographic Data with Off Court Statistics </h4>
 <form action="joinGraphOff.php" method="GET">
-<br />
 Select a Demographic:
 <br />
 <select name="dem">
@@ -187,6 +186,12 @@ Select a Demographic:
  <option value="population">Population</option>
  <option value="housingUnits">Housing Units</option>
 </select>
+Level of data:
+<select name="dem1level">
+  <option value="county_data">County Level</option>
+  <option value="metropolitan_area">Metropolitan Level</option>
+</select>
+
 <br />
 Select an off court team statistic:
 <br />
@@ -212,7 +217,7 @@ Select a team of interest:
 
   <option value="Hawks">Hawks</option>
   <option value="Heat">Heat</option>
-  <option value="Hornets">Hornets</option>
+  <option value="Pelicans">Hornets</option>
   <option value="Jazz">Jazz</option>
 
   <option value="Kings">Kings</option>
