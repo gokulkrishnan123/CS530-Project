@@ -1,0 +1,245 @@
+<html>
+<h1> Correlating NBA Team Information with Information about their City</h1>
+<form action="teamGraph.php" method="GET">
+Select a team:
+<select name="team">
+ <option value="Blazers">Blazers</option>
+  <option value="Bobcats">Bobcats</option>
+  <option value="Bucks">Bucks</option>
+  <option value="Bulls">Bulls</option>
+
+  <option value="Cavaliers">Cavaliers</option>
+  <option value="Celtics">Celtics</option>
+  <option value="Clippers">Clippers</option>
+  <option value="Grizzlies">Grizzlies</option>
+
+  <option value="Hawks">Hawks</option>
+  <option value="Heat">Heat</option>
+  <option value="Hornets">Hornets</option>
+  <option value="Jazz">Jazz</option>
+
+  <option value="Kings">Kings</option>
+  <option value="Knicks">Knicks</option>
+  <option value="Lakers">Lakers</option>
+  <option value="Magic">Magic</option>
+
+  <option value="Mavericks">Mavericks</option>
+  <option value="Nets">Nets</option>
+  <option value="Nuggets">Nuggets</option>
+  <option value="Pacers">Pacers</option>
+
+  <option value="Pistons">Pistons</option>
+  <option value="Raptors">Raptors</option>
+  <option value="Rockets">Rockets</option>
+  <option value="76ers">76ers</option>
+
+  <option value="Spurs">Spurs</option>
+  <option value="Suns">Suns</option>
+  <option value="Thunder">Thunder</option>
+  <option value="Timberwolves">Timberwolves</option>
+
+  <option value="Warriors">Warriors</option>
+  <option value="Wizards">Wizards</option>
+</select>
+<br />
+Currently Viewing Data for All Years:
+<br />
+Which stats are you interested in:
+<select name="whichStats">
+  <option value="onCourt">On Court Stats</option>
+  <option value="offCourt">Off Court Stats</option>
+</select>
+<input type="submit" value="Display" />
+</form>
+Select a City:
+<form action="cityGraph.php" method="GET">
+<select name="city">
+ <option value="Atlanta">Atlanta</option>
+  <option value="Boston">Boston</option>
+  <option value="Brooklyn">Brooklyn</option>
+  <option value="Charlotte">Charlotte</option>
+
+  <option value="Chicago">Chicago</option>
+  <option value="Cleveland">Cleveland</option>
+  <option value="Dallas">Dallas</option>
+  <option value="Denver">Denver</option>
+
+  <option value="Detroit">Detroit</option>
+  <option value="Houston">Houston</option>
+  <option value="Indianapolis">Indianapolis</option>
+  <option value="Los Angeles">Los Angeles</option>
+
+  <option value="Memphis">Memphis</option>
+  <option value="Miami">Miami</option>
+  <option value="Milwaukee">Milwaukee</option>
+  <option value="Minneapolis">Minneapolis</option>
+
+  <option value="New Orleans">New Orleans</option>
+  <option value="New York">New York</option>
+  <option value="Oklahoma City">Oklahoma City</option>
+  <option value="Orlando">Orlando</option>
+
+  <option value="Philadelphia">Philadelphia</option>
+  <option value="Phoenix">Phoenix</option>
+  <option value="Portland">Portland</option>
+  <option value="Sacramento">Sacramento</option>
+  <option value="Utah">Salt Lake City</option>
+  <option value="San Antonio">San Antonio</option>
+  <option value="Golden State">San Francisco</option>
+  <option value="Washington DC">Washington DC</option>
+ <select>
+<br />
+Select a demographic:
+<br />
+Are you interested in County level or Metropolitan level data?
+<select name="whichLevel">
+  <option value="county">County Level</option>
+  <option value="metropolitan">Metropolitan Level</option>
+</select>
+<input type="submit" value="Display" />
+
+</form>
+<br />
+Compare a demographic to an on court team statistic:
+<br />
+<form action="joinGraph.php" method="GET">
+<br />
+Select a Demographic:
+<br />
+<select name="dem">
+<option value="medianAge">Median Age</option>
+ <option value="maleFemaleRatio">Sex Ratio</option>
+ <option value="population">Population</option>
+ <option value="housingUnits">Housing Units</option>
+</select>
+
+Level of data:
+<select name="demlevel">
+  <option value="county_data">County Level</option>
+  <option value="metropolitan_area">Metropolitan Level</option>
+</select>
+
+<br />
+Select an on court team statistic:
+<br />
+<select name="stat">
+ <option value="margin_victory">Margin of Victory</option>
+ <option value="win_percent">Win Percentage</option>
+ <option value="offensive_rating">Offensive Rating</option>
+ <option value="defensive_rating">Defensive Rating</option>
+</select>
+<br />
+Select a team of interest:
+<br />
+<select name="team">
+<option value="Blazers">Blazers</option>
+  <option value="Bobcats">Bobcats</option>
+  <option value="Bucks">Bucks</option>
+  <option value="Bulls">Bulls</option>
+
+  <option value="Cavaliers">Cavaliers</option>
+  <option value="Celtics">Celtics</option>
+  <option value="Clippers">Clippers</option>
+  <option value="Grizzlies">Grizzlies</option>
+
+  <option value="Hawks">Hawks</option>
+  <option value="Heat">Heat</option>
+  <option value="Hornets">Hornets</option>
+  <option value="Jazz">Jazz</option>
+
+  <option value="Kings">Kings</option>
+  <option value="Knicks">Knicks</option>
+  <option value="Lakers">Lakers</option>
+  <option value="Magic">Magic</option>
+
+  <option value="Mavericks">Mavericks</option>
+  <option value="Nets">Nets</option>
+  <option value="Nuggets">Nuggets</option>
+  <option value="Pacers">Pacers</option>
+
+  <option value="Pistons">Pistons</option>
+  <option value="Raptors">Raptors</option>
+  <option value="Rockets">Rockets</option>
+  <option value="76ers">76ers</option>
+
+  <option value="Spurs">Spurs</option>
+  <option value="Suns">Suns</option>
+  <option value="Thunder">Thunder</option>
+  <option value="Timberwolves">Timberwolves</option>
+
+  <option value="Warriors">Warriors</option>
+  <option value="Wizards">Wizards</option>
+
+</select>
+<input type="submit" value="Display" />
+</form>
+
+<br />
+Compare a demographic to an off court team statistic:
+<br />
+<form action="joinGraphOff.php" method="GET">
+<br />
+Select a Demographic:
+<br />
+<select name="dem">
+<option value="medianAge">Median Age</option>
+ <option value="maleFemaleRatio">Sex Ratio</option>
+ <option value="population">Population</option>
+ <option value="housingUnits">Housing Units</option>
+</select>
+<br />
+Select an off court team statistic:
+<br />
+<select name="stat">
+ <option value="avg_ticket_pricing">Average Ticket Pricing</option>
+ <option value="payroll">Payroll</option>
+ <option value="stadium_capacity">Stadium Capacity</option>
+ <option value="avg_attendance">Average Attendance</option>
+</select>
+<br />
+Select a team of interest:
+<br />
+<select name="team">
+<option value="Blazers">Blazers</option>
+  <option value="Bobcats">Bobcats</option>
+  <option value="Bucks">Bucks</option>
+  <option value="Bulls">Bulls</option>
+
+  <option value="Cavaliers">Cavaliers</option>
+  <option value="Celtics">Celtics</option>
+  <option value="Clippers">Clippers</option>
+  <option value="Grizzlies">Grizzlies</option>
+
+  <option value="Hawks">Hawks</option>
+  <option value="Heat">Heat</option>
+  <option value="Hornets">Hornets</option>
+  <option value="Jazz">Jazz</option>
+
+  <option value="Kings">Kings</option>
+  <option value="Knicks">Knicks</option>
+  <option value="Lakers">Lakers</option>
+  <option value="Magic">Magic</option>
+
+  <option value="Mavericks">Mavericks</option>
+  <option value="Nets">Nets</option>
+  <option value="Nuggets">Nuggets</option>
+  <option value="Pacers">Pacers</option>
+
+  <option value="Pistons">Pistons</option>
+  <option value="Raptors">Raptors</option>
+  <option value="Rockets">Rockets</option>
+  <option value="76ers">76ers</option>
+
+  <option value="Spurs">Spurs</option>
+  <option value="Suns">Suns</option>
+  <option value="Thunder">Thunder</option>
+  <option value="Timberwolves">Timberwolves</option>
+
+  <option value="Warriors">Warriors</option>
+  <option value="Wizards">Wizards</option>
+
+</select>
+<input type="submit" value="Display" />
+</form>
+
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<a href="teamData.html">View Raw Data</a>
+<script src="chart.js"></script> 
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014"],
+        datasets: [{
+           fill: false,
+	strokeColor: "rgba(75,192,192,1)",
+pointBorderColor: "rgba(75,192,192,1)", 
+		 label: 'Win Percentage',
+            data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2],
+        },
+	{
+		fill: false,
+		label: 'Offensive Rating',
+		 data: [10, 12, 14, 15, 19, 23]},
+{ 
+                fill: false,
+                label: 'Defensive Rating',
+                 data: [11, 19, 10, 12, 10, 30]}, 
+{ 
+                fill: false,
+                label: 'Margin of Victory',
+                 data: [18, 23, 11, 11, 11, 15]}
+	]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+</html>

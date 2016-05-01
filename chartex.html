@@ -1,0 +1,33 @@
+<html>
+<script src="chart.js"></script> 
+<canvas id="myChart" width="4" height="4"></canvas>
+<script>
+var ctx = document.getElementById("myChart").getContext("2d");
+ctx.canvas.width = 10;
+ctx.canvas.height = 10;
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+           fill: false,
+	fullWidth: false,
+		 label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+		data: [10, 12, 14, 15, 19, 23]
+        }]
+    },
+    options: {
+	responsive: true,
+	maintainAspectRatio: true,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+</html>
